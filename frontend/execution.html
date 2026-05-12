@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Execution | AURA</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="app-container">
+        <main class="main-content" style="padding: 2rem;">
+            <div class="header-flex">
+                <h1>Autonomous Execution</h1>
+                <div id="status-badge" class="badge">Running...</div>
+            </div>
+            
+            <div class="execution-grid">
+                <div class="terminal-container">
+                    <div class="terminal-header">Agent Logs</div>
+                    <div id="log-container" class="terminal"></div>
+                </div>
+                
+                <div class="pipeline-container">
+                    <div class="step" id="step-1">1. Parse Issue</div>
+                    <div class="step" id="step-2">2. Clone Repo</div>
+                    <div class="step" id="step-3">3. Index & Search</div>
+                    <div class="step" id="step-4">4. Plan & Code</div>
+                    <div class="step" id="step-5">5. Test & Review</div>
+                    <div class="step" id="step-6">6. Create PR</div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="scripts/main.js"></script>
+    <script>
+        const url = localStorage.getItem('active_url');
+        if (url) {
+            // Trigger the backend
+            fetch('/api/submit', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({issue_url: url})
+            });
+        }
+    </script>
+</body>
+</html>

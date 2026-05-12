@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | AURA</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">AURA</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <h1>Agent Dashboard</h1>
+            <div class="glass-card">
+                <h3>New Code Review Session</h3>
+                <div class="input-group">
+                    <input type="text" id="github-url" placeholder="Enter GitHub Issue URL...">
+                    <button id="start-btn" class="btn btn-primary">Start Autonomous Fix</button>
+                </div>
+            </div>
+            <div id="active-sessions" style="margin-top: 2rem;">
+                <!-- Active sessions will appear here -->
+            </div>
+        </main>
+    </div>
+    <script>
+        document.getElementById('start-btn').addEventListener('click', () => {
+            const url = document.getElementById('github-url').value;
+            if (url) {
+                localStorage.setItem('active_url', url);
+                window.location.href = 'execution.html';
+            }
+        });
+    </script>
+</body>
+</html>

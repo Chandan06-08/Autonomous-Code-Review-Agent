@@ -1,0 +1,20 @@
+# Environments
+.env
+.venv
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Databases
+chroma_db/
+
+# Workspaces (Temporary repos cloned by AURA)
+workspaces/
+
+# Mac
+.DS_Store

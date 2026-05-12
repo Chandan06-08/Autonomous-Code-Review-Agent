@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results | AURA</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="app-container">
+        <main class="main-content">
+            <h1>Pull Request Generated</h1>
+            <div class="glass-card success-card">
+                <h2>The bug has been fixed!</h2>
+                <p>AURA has successfully analyzed, coded, and tested the solution.</p>
+                <a id="pr-link" href="#" class="btn btn-primary" target="_blank">View Pull Request on GitHub</a>
+            </div>
+            
+            <div style="margin-top: 2rem;">
+                <h3>Generated Diff</h3>
+                <pre id="diff-viewer" class="terminal" style="height: auto; min-height: 200px;"></pre>
+            </div>
+        </main>
+    </div>
+    <script>
+        const prUrl = localStorage.getItem('last_pr');
+        const diff = localStorage.getItem('last_diff');
+        if (prUrl) document.getElementById('pr-link').href = prUrl;
+        if (diff) document.getElementById('diff-viewer').innerText = diff;
+    </script>
+</body>
+</html>
