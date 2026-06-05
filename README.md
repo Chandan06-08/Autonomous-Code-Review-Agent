@@ -107,4 +107,4 @@ graph TD
 "Developed an autonomous software engineering agent using a multi-agent orchestration framework (CrewAI) and semantic search (ChromaDB). Implemented a self-correcting feedback loop that analyzes GitHub issues, identifies relevant codebase context, generates fixes, and validates changes through sandboxed testing before opening automated Pull Requests. Built a real-time monitoring dashboard with WebSockets for live status tracking."
 
 ---
-Built with ❤️ by Antigravity AI
+
